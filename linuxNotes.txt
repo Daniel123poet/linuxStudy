@@ -1,4 +1,4 @@
-Linux
+﻿Linux
 
 date命令
 
@@ -318,6 +318,43 @@ ubuntu卸载并重装firefox
  
  
 
+================================================================
+配置共享ubuntu的文件夹
 
+1.安装 Samba 和图形配置工具
+
+sudo apt-get install samba samba-common system-config-samba python-glade2 gksu
+
+2.在Dash中找到Samba
+
+3.创建一个共享的文件夹并设置读写权限
+
+4.创建Samba用户(例如share)
+useradd share
+
+5.设置密码 
+smbpasswd -a share
+按提示创建新密码
+
+6.重启Samba,或直接重启ubuntu
+service smbd restart
+
+
+7.访问，在windows里任意文件夹上方输入\\10.10.58.32
+输入用户名密码即可访问
+ 
+
+
+===================================================================
+
+配置VMware-Tools
+ 
+1.打开光盘，看到vmware-tools的压缩包
+2.解压
+3.cd到解压的目录
+4.执行 ./vmware-install.pl
+5.完成后重启ubuntu
+6.在虚拟机的设置里开启共享文件夹
+7.在ubuntu里的mnt/hgfs文件夹下查看同步的文件夹
 
 
